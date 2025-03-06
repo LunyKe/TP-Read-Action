@@ -1,18 +1,38 @@
 <?php
+
+ session_start();
+
 include "./partials/header.php";
 include "./utils/Function.php";
 include "./config/pdo.php";
+
+if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["email"]) && isset($_POST["password"])) {
+   if (empty($_POST["email"]) || empty($_POST["password"])) {
+       echo "Veuillez remplir tous les champs";
+   } else {
+       $email = $_POST["email"];
+       $password = $_POST["password"];
+       $sql = "SELECT * FROM users WHERE email = ?";
+       $stmt = $pdo->prepare($sql);
+       $stmt->execute([$email]);
+       $user = $stmt->fetch();
+
+       if ($result) {
+        $password_hash = $result["password_hash"];
+        if (password_verify($password, $password_hash)) {
+            session_start();
+            $_SERVER = $result;
+            header("Location: librairie.php");
+            ob_flush();
+        } else {
+            echo "Mot de passe incorrect";
+    
+       
+        }
+    }
+}
+}
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
 
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">

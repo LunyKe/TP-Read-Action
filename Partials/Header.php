@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="./Partials/img/book.png">
 </head>
-<body class="bg-[url('https://thebestmods.com/wp-content/uploads/2023/06/Underground_Library_in_Minecraft-transformed.jpeg')]  bg-center bg-cover mt-100">
+<body class="bg-[url('https://thebestmods.com/wp-content/uploads/2023/06/Underground_Library_in_Minecraft-transformed.jpeg')] top-0 bg-cover mt-100">
 
 
 
