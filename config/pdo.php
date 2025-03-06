@@ -14,7 +14,7 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);
 
 
-echo "Connexion réussie";
+;
 } catch (PDOException $error) {
     die("Il y a une erreur : " . $error->getMessage());
 }
