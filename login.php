@@ -3,7 +3,6 @@
 ob_start();
 
 include "./partials/header.php";
-include "./utils/Function.php";
 include "./config/pdo.php";
 
 if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["email"]) && isset($_POST["password"])) {
@@ -21,7 +20,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["email"]) && isset($_
             $password_hash = $result["mot_de_passe"];
             if (password_verify($password, $password_hash)) {
                 session_start();
-                $_SERVER = $result;
+                $_SESSION = $result;
                 header("Location: librairie.php");
                 ob_flush();
             } else {
