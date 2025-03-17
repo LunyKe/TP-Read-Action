@@ -2,7 +2,7 @@
 
 ob_start();
 
-include "./partials/header.php";
+include("./partials/header.php");
 include "./config/pdo.php";
 
 if (($_SERVER["REQUEST_METHOD"] == "POST") && isset($_POST["email"]) && isset($_POST["password"])) {

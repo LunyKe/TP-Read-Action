@@ -26,14 +26,14 @@ include "./partials/header.php";
                     alt="Your Company">
 
                 <h2 class="mt-3 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Search for your book</h2>
-                <input type="text" name="title" id="title" placeholder="Title"
+                <input type="text" name="search" id="search" placeholder="search"
                     class="md-10pxblock w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 border value">
                 <button class="bg-amber-950 text-white text-sm py-2 px-4 rounded hover:bg-zinc-950 btn">
                     Search
                 </button>
 
                 <div class="results">
-                    
+
                 </div>
 
 
