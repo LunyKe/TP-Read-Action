@@ -1,8 +1,11 @@
 <?php
 
 session_start();
-if ((!$_SERVER["REQUEST_URI"] === "/login.php") || (!$_SERVER[""] === "/signupphp"))
+if ((!$_SERVER["REQUEST_URI"] === "/login.php") || (!$_SERVER["REQUEST_URI"] === "/signup.php")){
+  echo"dans le IF";
   session_start();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +20,7 @@ if ((!$_SERVER["REQUEST_URI"] === "/login.php") || (!$_SERVER[""] === "/signupph
   <script defer src="book.js"></script>
 </head>
 
-<body
-  class="bg-[url('https://thebestmods.com/wp-content/uploads/2023/06/Underground_Library_in_Minecraft-transformed.jpeg')] top-0 bg-cover mt-100">
+<body>
 
 
 

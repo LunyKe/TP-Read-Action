@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include_once 'partials/header.php';
 
 ?>
