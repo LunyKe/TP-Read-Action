@@ -78,3 +78,17 @@ function displayBook(book) {
 
 
 }
+favorite.addEventListener("click", () => {
+    // Je vide ma zone de résultats pour y afficher mles favoris
+    result.innerHTML = ""
+
+    // Je recup les favs du Local Storage
+    let favs = JSON.parse(localStorage.getItem("favs")) 
+
+    if (favs.length) {
+        // J'affiche les films dans le HTML
+        displayMovies(favs)
+    } else {
+        results.textContent = "Aucun favoris pour le moment.."
+    }
+})
