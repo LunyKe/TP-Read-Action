@@ -25,6 +25,7 @@ if (logout) {
 let input = document.querySelector(".searchInput");
 let submit = document.querySelector(".btn");
 let result = document.querySelector(".results");
+let favorite = document.querySelector(".favBtn");
 //L'API Google Books
 let apikey = "AIzaSyDTGZKooGZ9XLV4CKC24j0ETrlmjcNVwkk" //= clé API
 let Api = `https://www.googleapis.com/books/v1/volumes?q=intitle:${input.value}&key=${apikey}`;
@@ -61,6 +62,8 @@ function displayBook(book) {
     let img = document.createElement("img");
     let year = document.createElement("p");
     let description = document.createElement("p");
+    let favBtn = document.createElement("button");
+    favBtn.classList.add("bg-amber-950", "hover:bg-zinc-950", "text-white", "font-bold", "py-2", "px-4", "rounded-full", "mt-4");
 
     title.textContent = book.volumeInfo.title;
     img.src = book.volumeInfo.imageLinks.thumbnail;
@@ -68,8 +71,10 @@ function displayBook(book) {
     year.textContent = book.volumeInfo.publishedDate;
     
 
-   container.append(title, authors, img, year);
+   container.append(title, authors, img, year, favBtn);
     result.appendChild(container);
+
+    favBtn.textContent = "Ajouter aux favoris";
 
 
 }

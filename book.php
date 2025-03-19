@@ -31,6 +31,8 @@ include "./partials/header.php";
                 <button class="bg-amber-950 text-white text-sm py-2 px-4 rounded hover:bg-zinc-950 btn">
                     Search
                 </button>
+                <button class="bg-amber-950 text-white text-sm py-2 px-3 rounded hover:bg-zinc-950 favBtn
+                mx-auto">Favoris</button>
 
 
 
