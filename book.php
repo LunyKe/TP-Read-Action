@@ -44,7 +44,7 @@ include "./partials/header.php";
 
     </div>
     <div
-        class="results w-full flex flex-col justify-center items-center grid grid-cols-3 gap-4 justify-center items-center w-96 mx-auto p-8 rounded-lg shadow-lg">
+        class=" md-5 results w-full flex flex-col justify-center items-center grid grid-cols-3 gap-4 justify-center items-center w-96 mx-auto p-8 rounded-lg shadow-lg">
 
     </div>
 

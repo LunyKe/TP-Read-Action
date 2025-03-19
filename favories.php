@@ -8,24 +8,68 @@ include "./partials/header.php";
 
 
 <?php
-// Connexion à la base de données
-$conn = new mysqli('localhost', 'nom_utilisateur', 'mot_de_passe', 'nom_base');
+// Ajouter un livre aux favoris
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     $userId = $_POST['user_id'];
     $bookId = $_POST['book_id'];
 
-    $sql = "INSERT INTO favorites (user_id, book_id) VALUES (?, ?)";
+    $sql = "INSERT INTO favorites (id,user_id, book_id) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $userId, $bookId);
+    
+
+    $sql= "U";
 
     if ($stmt->execute()) {
-        echo "Livre ajouté aux favoris !";
+        echo "ajouté aux favoris!";
     } else {
         echo "Erreur : " . $stmt->error;
     }
 }
+
+// Récupérer les favoris de l'utilisateur
+
+$userId = $_GET['user_id'];
+
+$sql = "SELECT books.title FROM favorites 
+        JOIN books ON favorites.book_id = books.id 
+        WHERE favorites.user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $userId);
+
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    echo "<p>" . $row['title'] . "</p>";
+}
+
+
+// Supprimer un favori
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $favoriteId = $_POST['favorite_id'];
+
+    $sql = "DELETE FROM favorites WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $favoriteId);
+
+    if ($stmt->execute()) {
+        echo "Favori supprimé !";
+    } else {
+        echo "Erreur : " . $stmt->error;
+    }
+}
+
+
+
+
 ?>
+
+
+
 
 
 
