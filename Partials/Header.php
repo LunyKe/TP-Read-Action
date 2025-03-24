@@ -82,7 +82,7 @@ if ((!$_SERVER["REQUEST_URI"] === "/login.php") || (!$_SERVER["REQUEST_URI"] ===
           <!-- Profile dropdown -->
           <div class="relative ml-3">
             <div class="flex justify-center items-center flex-row gap-4">
-              <img class="size-11 rounded-full bg-white" src="./Partials/img/Prof.png" alt="">
+              <img class="size-11 rounded-full bg-white" src="./Partials/img/default-avatar-removebg-preview.png" alt="">
 
 
               <?php if (!empty($_SESSION)): ?>
